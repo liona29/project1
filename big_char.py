@@ -1,5 +1,3 @@
-import requests
-
 class big_char(object):
     def __init__(self):
         self.A = [
@@ -235,6 +233,15 @@ class big_char(object):
             , " /      "
             , "/______ "
         ]
+        self.space = [
+            "         "
+            , "        "
+            , "        "
+            , "        "
+            , "        "
+            , "        "
+            , "        "
+        ]
         self.charsbig = {"A": self.A
             , "R": self.R
             , "I": self.I
@@ -261,27 +268,20 @@ class big_char(object):
             , "X": self.X
             , "Y": self.Y
             , "Z": self.Z
+            , " ": self.space
                          }
 
     def char_big_str(self, str):
         newstr = ""
         for i in range(7):
             for ch in str.upper():
-                newstr += self.charsbig[ch][i]
+                if ch in(" ABCDEFGHIJKLMNOPQRSTUVWXYZ") :
+                    newstr += self.charsbig[ch][i]
             newstr += "<br>"
         return newstr
 
-
-def main():
-    while True:
-        str = input("enter str")
-
+def biger(str):
         c = big_char()
         ans = c.char_big_str(str)
-
-        print("insert db")
-        print(ans)
-        conti = input("do you whant to continu? (y/n)")
-        if conti == 'n': break
-
+        return ans
 
