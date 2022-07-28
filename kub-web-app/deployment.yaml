@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: big-char-app
+spec:
+  selector:
+    matchLabels:
+      app: big-char-app
+  template:
+    metadata:
+      labels:
+        app: big-char-app
+    spec:
+      containers:
+      - name: big-char-app
+        image: 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:big-char.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+       - name: regcred
