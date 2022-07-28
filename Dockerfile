@@ -5,4 +5,4 @@ RUN pip install flask
 WORKDIR ./flask/
 COPY . .
 
-CMD ["python", "./app.py"]
+CMD ["python", "./flask/app.py"]
