@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: big-char-app
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: big-char-app
@@ -14,9 +15,9 @@ spec:
       containers:
       - name: big-char-app
         # image: 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:testbig.1.1
-        image: liona29/bigchar:1 
+        image: liona29/bigchar:1.5
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000
+        - containerPort: 8004
       # imagePullSecrets:
       #  - name: regcred

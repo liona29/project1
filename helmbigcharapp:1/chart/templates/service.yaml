@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: big-char-app
+  namespace: health-check
+spec:
+  type: NodePort
+  ports:
+  - port: 8004
+    targetPort: 8004
+  selector:
+    app: big-char-app
