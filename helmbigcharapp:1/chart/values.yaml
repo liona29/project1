@@ -1,1 +1,10 @@
 replicaCount: 2
+
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+ingress:
+  host: bigchar.ari
+  path: /

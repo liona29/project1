@@ -1,6 +1,5 @@
 
-CREATE TABLE pong(
-    id SERIAL PRIMARY KEY,
-    Ari int,
-    Ariel int
+CREATE TABLE bigchar(
+    str varchat,
+    big_char text,
     );

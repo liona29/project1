@@ -14,9 +14,12 @@ spec:
       containers:
       - name: big-char-app
         # image: 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:testbig.1.1
-        image: liona29/bigchar:1 
+        image: liona29/bigcharapppost:1.3
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
+        envFrom:
+          - configMapRef:
+              name: postgres-config
       # imagePullSecrets:
       #  - name: regcred

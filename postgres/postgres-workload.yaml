@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: liona29/postgres-init-bigchar:1.1
+          image: liona29/postgrestobogapp:1.1
           imagePullPolicy: "IfNotPresent"
           envFrom:
             - configMapRef:
