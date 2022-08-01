@@ -4,9 +4,9 @@ metadata:
   name: big-char-app
   namespace: health-check
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-  - port: 8004
+  - port: 8080
     targetPort: 8004
   selector:
     app: big-char-app

@@ -17,6 +17,6 @@ spec:
           service:
             name: big-char-app
             port:
-              number: 8004
+              number: 8080
 status:
   loadBalancer: {}
