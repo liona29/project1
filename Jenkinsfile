@@ -7,21 +7,23 @@ pipeline {
     stages{
         stage("build") {
             steps{
-                sh "docker build -t ${params.IMAGANAME} flaskbigapp:1"
+                sh "docker build -t 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:${params.IMAGANAME} flaskbigapp:1"
+                
                 }
             }
 
-        stage("test") {
+        stage("up-to-ecr") {
 
             steps {
-                echo "testing ther application"
+                sh "docker push 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:${params.IMAGANAME}"
             }
         }
 
-        stage("deploy") {
+        stage("down-from-ecr") {
 
             steps {
-                echo "deploying the application"
+                sh "docker rmi 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:${params.IMAGANAME}"
+                sh "docker run 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:${params.IMAGANAME}"
             }
         }
     }
