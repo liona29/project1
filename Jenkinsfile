@@ -1,7 +1,7 @@
 pipeline {
 
     agent {label 'jenkins-slave' }
-`   parameters {
+    parameters {
         string(name: 'IMAGANAME', defaultValue: 'bigchar', descriptrion: 'name for bilding image (flask bigchar web app)')
     }
     stages{
