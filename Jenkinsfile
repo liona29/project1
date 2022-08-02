@@ -5,11 +5,7 @@ pipeline {
     stages{
         stage("build") {
             steps{
-                echo "========executing A========"
-
-                script {
-                    def test = 2 + 2 > 3 ? 'cool' : 'not cool'
-                    echo test
+                sh "docker build flaskbigapp:1"
                 }
             }
         }
@@ -27,5 +23,4 @@ pipeline {
                 echo "deploying the application"
             }
         }
-    }
 }
