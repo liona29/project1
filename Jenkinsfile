@@ -1,11 +1,13 @@
 pipeline {
 
     agent {label 'jenkins-slave' }
-
+`   parameters {
+        string(name: 'IMAGANAME', defaultValue: 'bigchar', descriptrion: 'name for bilding image (flask bigchar web app)')
+    }
     stages{
         stage("build") {
             steps{
-                sh 'docker build -t $Name flaskbigapp:1'
+                sh "docker build -t ${IMAGANAME} flaskbigapp:1"
                 }
             }
 
