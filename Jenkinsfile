@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage("build") {
             steps{
-                sh "docker build -t ${IMAGANAME} flaskbigapp:1"
+                sh "docker build -t "${params.IMAGANAME}" flaskbigapp:1"
                 }
             }
 
