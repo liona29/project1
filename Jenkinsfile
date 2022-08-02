@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage("build") {
             steps{
-                sh "docker build -t jenkins ./flaskbigapp:1"
+                sh "docker build -t jenkins1 flaskbigapp:1"
                 }
             }
 
