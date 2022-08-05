@@ -6,9 +6,9 @@ pipeline {
         stage("build") {
             steps{
                 sh "echo hello ari"
-                sh "cd flaskbigapp:1"
+                // sh "cd flaskbigapp:1"
                 sh "ls"
-                sh "docker build -t bigchar ."             
+                sh "docker build -t bigchar flaskbigapp:1"             
                 }
             }
 
@@ -24,9 +24,9 @@ pipeline {
         stage("build helm") {
 
             steps {
-                sh "cd .."
-                sh "cd ./helmbigcharapp:1/chart"
-                sh "helm upgrade --install bigchar . --set containers.imageTag=latest${BUILD_NUMBER}"
+                // sh "cd .."
+                // sh "cd ./helmbigcharapp:1/chart"
+                sh "helm upgrade --install bigchar ./helmbigcharapp:1/chart --set containers.imageTag=latest${BUILD_NUMBER}"
             }
  
         }
