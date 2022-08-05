@@ -20,6 +20,8 @@ def bigchar():
     outfile = open('/templates/ans.html', 'w')
     outfile.write(ans)
     outfile.close()
-    return redirect(render_template("ans.html"))
-
+    if request.method == 'POST' and form.validate():
+        return redirect(url_for('bigchar'))
+    return render_template("ans.html")
+    
 app.run(host='0.0.0.0', port=8004)
