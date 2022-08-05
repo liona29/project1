@@ -1,10 +1,7 @@
 pipeline {
 
     agent {label 'k8s-slave' }
-    environment 
-    parameters {
-        string(name: 'IMAGANAME', defaultValue: 'bigchar', description: 'name for bilding image (flask bigchar web app)')
-    }
+
     stages{
         stage("build") {
             steps{
