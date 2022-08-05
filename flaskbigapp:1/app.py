@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
 from big_char import *
+import os
 
 app = Flask(__name__)
 app.secret_key = "ariariari"
@@ -12,6 +13,8 @@ def index():
 @app.route("/bigchar", methods=["POST", "GET"])
 def bigchar():
     print("bigchar")
+    if os.path.exists("/templates/ans.html"):
+        os.remove("/templates/ans.html")
     str = request.form['name_input']
     ans = biger(str)
     ans = '<html><head><title>'+str+'</title><style>body {background-color: lightblue;}</style></head><body><center><p><br><br><br><br><br><br><br><pre>' + ans + '</pre></center></p></body></html>'
