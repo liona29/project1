@@ -7,7 +7,7 @@ pipeline {
             steps{
                 sh "echo hello ari"
                 sh "cd flaskbigapp:1"
-                sh "pwd"
+                sh "ls"
                 sh "docker build -t bigchar ."             
                 }
             }
