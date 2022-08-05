@@ -1,12 +1,12 @@
 replicaCount: 2
 containers:
-  imageRepo: 
-  imagrTag:
+  imageRepo: "295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein"
+  imageTag: "latest"
 resources:
   limits:
     memory: "128Mi"
     cpu: "500m"
 
 ingress:
-  host: bigchar.ari
+  host: "bigchar.arihope.xyz"
   path: /
