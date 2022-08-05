@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: big-char-app
-        # image: 295862277960.dkr.ecr.eu-central-1.amazonaws.com/ariwein:testbig.1.1
-        image: liona29/bigchar:1.5
+        image: {{ .Values.containers.imageRepo }}: {{ .Values.containers.imagrTag }}
+        # image: liona29/bigchar:1.5
         imagePullPolicy: Always
         resources:
           limits:
@@ -23,6 +23,6 @@ spec:
             cpu: {{ .Values.resources.limits.cpu }}
         ports:
         - containerPort: 8004
-      # imagePullSecrets:
-      #  - name: regcred
+      imagePullSecrets:
+       - name: regcred
 
