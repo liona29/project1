@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: big-char-app
-        image: {{ .Values.containers.imageRepo }}: {{ .Values.containers.imagrTag }}
+        image: {{ .Values.containers.imageRepo }}:{{ .Values.containers.imageTag }}
         # image: liona29/bigchar:1.5
         imagePullPolicy: Always
         resources:
