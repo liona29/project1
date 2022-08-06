@@ -17,9 +17,9 @@ def bigchar():
     ans = biger(str)
     ans = '<html><head><title>' + str +  '</title><style>body {background-color: lightblue;}</style></head><body><center>' \
     + '<p><br><br><br><br><br><br><br><pre>' + ans + '</pre></center></p></body></html>'
-    outfile = open('/templates/ans.html', 'w')
-    outfile.write(ans)
-    outfile.close()
-    return render_template("ans.html")
+    # outfile = open('/templates/ans.html', 'w')
+    # outfile.write(ans)
+    # outfile.close()
+    return ans
 
 app.run(host='0.0.0.0', port=8004)
