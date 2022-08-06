@@ -30,7 +30,7 @@ pipeline {
         }
         stage("deploy") {
             steps {
-                sh "kubectl get ing big-char"
+                sh "sudo kubectl get ing big-char"
             }
 
         }
