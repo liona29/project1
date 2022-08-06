@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash
 from big_char import *
-import os
+
 
 app = Flask(__name__)
 app.secret_key = "ariariari"
