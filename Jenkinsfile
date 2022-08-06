@@ -24,7 +24,7 @@ pipeline {
             steps {
                 // sh "cd .."
                 // sh "cd ./helmbigcharapp:1/chart"
-                sh "helm upgrade --install bigchar ./helmbigcharapp:1/chart --set containers.imageTag=latest${BUILD_NUMBER}"
+                sh "sudo helm upgrade --install bigchar ./helmbigcharapp:1/chart --set containers.imageTag=latest${BUILD_NUMBER}"
             }
  
         }
