@@ -16,7 +16,7 @@ def bigchar():
     str = request.form['name_input']
     ans = biger(str)
     ans = '<html><head><title>' + str +  '</title><style>body {background-color: lightblue;}</style></head><body><center>' \
-    + '<p><br><br><br><br><br><br><br><pre>' + ans + '</pre></center></p></body></html>'
+    + '<p><br><br><br><br><br><br><br><br><br><br><br><pre>' + ans + '</pre></center></p></body></html>'
     # outfile = open('/templates/ans.html', 'w')
     # outfile.write(ans)
     # outfile.close()
