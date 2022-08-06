@@ -5,10 +5,7 @@ pipeline {
     stages{
         stage("build") {
             steps{
-                sh "sudo -s"
                 sh "echo hello ari"
-                // sh "cd flaskbigapp:1"
-                sh "ls"
                 sh "docker build -t bigchar flaskbigapp:1"             
                 }
             }
